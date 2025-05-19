@@ -7,6 +7,7 @@ const app = express();
 const expressLayouts = require("express-ejs-layouts");
 
 const indexRouter = require("./routes/index");
+const zipCodeRouter = require("./routes/zipCodes");
 
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views"); // set where views are coming from, which is a "views" directory
@@ -20,7 +21,7 @@ const database = mongoose.connection;
 database.on("error", error => console.error(error));
 database.once("open", () => console.log("Connected to Mongoose! :-)"));
 
-// the index handles the very route (/) of our project
-app.use("/", indexRouter);
+app.use("/", indexRouter); // the index handles the very route (/) of our project
+app.use("/zip-codes", zipCodeRouter); // every zip code route will be pre-prended by "/zip-codes"
 
 app.listen(process.env.PORT || 3000);

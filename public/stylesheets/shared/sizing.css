@@ -1,0 +1,20 @@
+:root {
+    --border-radius: 5px;
+
+    --font-sm: 80%;
+    --font-md: 1rem;
+    --font-lg: 125%;
+    --font-xl: 150%;
+    --h1: 300%;
+
+    --hamburger-bar-gap: 0.3rem;
+    --hamburger-bar-height: var(--hamburger-bar-gap);
+    --hamburger-bar-width: 2.5rem;
+    --hamburger-height: calc(var(--hamburger-bar-height) * 3 + var(--hamburger-bar-gap) * 2);
+
+    --padding-xs: 0.5rem;
+    --padding-sm: 0.75rem;
+    --padding-md: 1rem;
+    --padding-lg: 2rem;
+    --padding-header: 4rem var(--padding-md) 4rem;
+}

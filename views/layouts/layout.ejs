@@ -5,8 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Garden Zone</title>
+  <link rel="stylesheet" href="/stylesheets/main.css">
 </head>
 <body>
-  <%- body %>
+  <%- include("../partials/nav.ejs") %>
+  <main>
+    <%- body %>
+  </main>
+  <%- include("../partials/footer.ejs") %>
 </body>
 </html>
