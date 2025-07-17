@@ -3,7 +3,7 @@
 
     --font-sm: 80%;
     --font-md: 1rem;
-    --font-lg: 1.5rem;
+    --font-lg: 1.3rem;
     --font-xl: 2rem;
     --h1: 300%;
     --heading-lg: 3rem;
@@ -23,6 +23,7 @@
 }
 
 .font-sm {font-size: var(--font-sm);}
+.font-md {font-size: var(--font-md);}
 .font-lg {font-size: var(--font-lg);}
 .font-xl {font-size: var(--font-xl);}
 .heading-lg {font-size: var(--heading-lg);}

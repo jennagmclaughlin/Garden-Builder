@@ -191,7 +191,6 @@ header h1 span.clr {
 
 header p {
     margin: var(--padding-sm) auto var(--padding-lg);
-    font-size: var(--font-lg);
 }
 
 header .form {
