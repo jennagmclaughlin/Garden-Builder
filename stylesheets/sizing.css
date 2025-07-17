@@ -1,0 +1,29 @@
+:root {
+    --border-radius: 5px;
+
+    --font-sm: 80%;
+    --font-md: 1rem;
+    --font-lg: 1.5rem;
+    --font-xl: 2rem;
+    --h1: 300%;
+    --heading-lg: 3rem;
+    --heading-xl: 4rem;
+
+    --hamburger-bar-gap: 0.3rem;
+    --hamburger-bar-height: var(--hamburger-bar-gap);
+    --hamburger-bar-width: 2.5rem;
+    --hamburger-height: calc(var(--hamburger-bar-height) * 3 + var(--hamburger-bar-gap) * 2);
+
+    --padding-xs: 0.5rem;
+    --padding-sm: 0.75rem;
+    --padding-md: 1rem;
+    --padding-lg: 2rem;
+    --padding-xl: 2.5rem;
+    --padding-header: 4rem var(--padding-md) 4rem;
+}
+
+.font-sm {font-size: var(--font-sm);}
+.font-lg {font-size: var(--font-lg);}
+.font-xl {font-size: var(--font-xl);}
+.heading-lg {font-size: var(--heading-lg);}
+.heading-xl {font-size: var(--heading-xl);}
