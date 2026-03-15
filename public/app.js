@@ -1,3 +1,5 @@
+// front end js
+
 const zipInput = document.getElementById("zipInput");
 const submitBtn = document.getElementById("zipCodeSubmit");
 const zipContain = document.body.querySelector("#zipcode .container");
