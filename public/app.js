@@ -3,8 +3,6 @@ const submitBtn = document.getElementById("zipCodeSubmit");
 const zipContain = document.body.querySelector("#zipcode .container");
 const plantsContain = document.body.querySelector("#plants-list .container");
 
-// const user = JSON.parse(localStorage.getItem("userInfo"));
-
 async function grabZip(zip) {
   try {
     const response = await fetch(`https://phzmapi.org/${zip}.json`);
@@ -17,24 +15,6 @@ async function grabZip(zip) {
     window.alert(error);
     // don't clear local storage for errors in case user messes up
     zipInput.classList.add("errorInput");
-    display();
-    return null;
-  }
-}
-
-async function plantsList(search) {
-  const user = JSON.parse(localStorage.getItem("userInfo"));
-  if (user == null) {
-    return null;
-  }
-  try {
-    const response = await fetch(`http://localhost:5500/plants/${search}`);
-    const plantResults = await response.json();
-    return plantResults;
-  } catch (error) {
-    console.error(error);
-    plantsContain.innerHTML = "";
-    window.alert(error);
     display();
     return null;
   }
@@ -64,7 +44,6 @@ submitBtn.addEventListener("click", async (e) => {
 
 async function display() {
   const user = JSON.parse(localStorage.getItem("userInfo"));
-  const plants = await plantsList("tomato");
   if (user == null) {
     zipContain.innerHTML = "<p>Please enter your zip code! :-)</p>";
     plantsContain.innerHTML = "";
@@ -79,17 +58,6 @@ async function display() {
                 <li><strong>Latitude / Longitude:</strong> ${user.lat} / ${user.lon}</li>
             </ul>
         `;
-
-  // displaying compatiable plants with user zone
-  // if (plants && plants.data.length > 0) {
-  // plantsContain.innerHTML = plants.data
-  //   .slice(0, 10)
-  //   .map(
-  //     (plant) =>
-  //       `<div class="plant">${plant.common_name} ${plant.growth.zone}</div>`,
-  //   );
-  // }
-  console.log(plants.data);
   zipContain.scrollIntoView();
   zipInput.classList.remove("errorInput");
 }
