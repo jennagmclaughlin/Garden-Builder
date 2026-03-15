@@ -1,11 +1,10 @@
 require("dotenv").config();
 const express = require("express");
+const router = express.Router();
 const rateLimit = require("express-rate-limit");
 const cors = require("cors");
 const app = express();
 const port = 5500;
-
-const plants = require("../../plants");
 
 app.use(express.json());
 const whitelist = ["http://127.0.0.1", "http://127.0.0.1:5500"];
@@ -32,6 +31,16 @@ app.use(limiter);
 // test route
 app.get("/", (req, res) => res.json({ success: "Hello World" }));
 
-app.use("/plants", plants);
-
 app.listen(port, () => console.log(`App listening on port ${port}`));
+
+// searching for plants route
+const fetchPlants = async (searchtext) => {
+  const url = `https://trefle.io/api/v1/plants/search?token=${process.env.PLANTS_API_KEY}&q=${searchtext}`;
+  try {
+    const plantsStream = await fetch(url);
+    const plantsJson = await plantsStream.json();
+    return plantsJson;
+  } catch (err) {
+    return { Error: err.stack };
+  }
+};
