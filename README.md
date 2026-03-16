@@ -17,7 +17,7 @@ It's a lot more complicated than I thought, because of course it is.
 1. Fetch plant data from [Trefle.io](https://docs.trefle.io/) and store a data set to avoid hitting rate limits.
    - Since this is a garden builder, only store vegetables, fruits, flowers, shrubs and trees. That will avoid random wild plants.
    - Limit fields to what I care about: scientific name, common name, image, description, light, min/max precip, min/max temp, native distribution...
-2. User enters in their zip code, use [Frostline](https://github.com/waldoj/frostline) to get coordinates. User must also enter how much light their garden will get ("varies," "full sun," "partial," "shade").
+2. User enters in their state and county, use [us_latlng_json](https://github.com/hiddentao/us_latlng_json/tree/master) to get coordinates. User must also enter how much light their garden will get ("varies," "full sun," "partial," "shade").
    - User coordinates and light are stored in local storage.
 3. With stored coordinates, use [Historical Weather](https://open-meteo.com/en/docs/historical-weather-api) to get averages over a 10-year period.
    1. Lowest and highest temperature in 10 years (extremes).
@@ -48,6 +48,7 @@ It's a lot more complicated than I thought, because of course it is.
    - When user re-selects selected state ("Iowa" for example), counties do not populate since the event listener for the states dropdown is "on change"
 2. Need to style dropdowns, they're ugly
 3. Change "Wait, what does this mean?" since I'm no longer using hardiness zones
+4. Not a bug but pls don't forget the light drop down...
 
 ## Solutions to past hurdles/bugs
 
