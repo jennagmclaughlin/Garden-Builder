@@ -281,7 +281,7 @@ header a {
   color: var(--cta-clr);
 }
 
-#zipcode,
+#userLoc,
 #explanation {
   padding: var(--padding-xl) 0;
 }

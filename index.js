@@ -7,8 +7,9 @@ const PORT = process.env.PORT || 5500; // 5500 is localhost fallback if port isn
 const app = express();
 
 // limit rates
+// 5 rates for each 5 min; when user hits 5 rates, wait 5 min
 const limiter = rateLimit({
-  windowMs: 10 * 60 * 1000, // 10 min
+  windowMs: 5 * 60 * 1000, // 5 min, in milliseconds so math
   max: 5,
 });
 app.use(limiter);

@@ -19,23 +19,69 @@
           Build your <span class="clr">dream garden.</span>
         </h1>
         <p class="font-lg">
-          Find your USDA plant hardiness zone, and we'll give you a list of
-          plants that you can put in your garden with no worries. Just enter
-          your zip code below to get started.
+          Find your coordinates, and we'll give you a list of plants that you
+          can put in your garden with no worries. Just enter your zip code below
+          to get started.
         </p>
         <form class="form">
-          <div class="input-effect">
-            <input
-              type="text"
-              id="zipInput"
-              max="99999"
-              minlength="5"
-              maxlength="5"
-              required
-            />
-            <label>Zip Code</label>
+          <div>
+            <select id="states" required>
+              <option value="AL">Alabama</option>
+              <option value="AK">Alaska</option>
+              <option value="AZ">Arizona</option>
+              <option value="AR">Arkansas</option>
+              <option value="CA">California</option>
+              <option value="CO">Colorado</option>
+              <option value="CT">Connecticut</option>
+              <option value="DE">Delaware</option>
+              <option value="FL">Florida</option>
+              <option value="GA">Georgia</option>
+              <option value="HI">Hawaii</option>
+              <option value="ID">Idaho</option>
+              <option value="IL">Illinois</option>
+              <option value="IN">Indiana</option>
+              <option value="IA">Iowa</option>
+              <option value="KS">Kansas</option>
+              <option value="KY">Kentucky</option>
+              <option value="LA">Louisiana</option>
+              <option value="ME">Maine</option>
+              <option value="MD">Maryland</option>
+              <option value="MA">Massachusetts</option>
+              <option value="MI">Michigan</option>
+              <option value="MN">Minnesota</option>
+              <option value="MS">Mississippi</option>
+              <option value="MO">Missouri</option>
+              <option value="MT">Montana</option>
+              <option value="NE">Nebraska</option>
+              <option value="NV">Nevada</option>
+              <option value="NH">New Hampshire</option>
+              <option value="NJ">New Jersey</option>
+              <option value="NM">New Mexico</option>
+              <option value="NY">New York</option>
+              <option value="NC">North Carolina</option>
+              <option value="ND">North Dakota</option>
+              <option value="OH">Ohio</option>
+              <option value="OK">Oklahoma</option>
+              <option value="OR">Oregon</option>
+              <option value="PA">Pennsylvania</option>
+              <option value="RI">Rhode Island</option>
+              <option value="SC">South Carolina</option>
+              <option value="SD">South Dakota</option>
+              <option value="TN">Tennessee</option>
+              <option value="TX">Texas</option>
+              <option value="UT">Utah</option>
+              <option value="VT">Vermont</option>
+              <option value="VA">Virginia</option>
+              <option value="WA">Washington</option>
+              <option value="WV">West Virginia</option>
+              <option value="WI">Wisconsin</option>
+              <option value="WY">Wyoming</option>
+            </select>
           </div>
-          <input type="submit" value="Find Plants" id="zipCodeSubmit" />
+          <div>
+            <select id="counties" required></select>
+          </div>
+          <input type="submit" value="Find Plants" id="locSubmit" />
         </form>
         <p>
           <a href="#explanation">Wait, what does this mean?</a>
@@ -43,7 +89,7 @@
       </div>
     </header>
     <main>
-      <section id="zipcode">
+      <section id="userLoc">
         <div class="container"></div>
       </section>
       <section id="plants-list">
