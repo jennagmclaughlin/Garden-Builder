@@ -22,6 +22,12 @@ async function grabZip(zip) {
   }
 }
 
+const grabPlants = async (zone) => {
+  const url = `/api?q=${zone}`;
+  const res = await fetch(url);
+  const data = await res.json();
+};
+
 submitBtn.addEventListener("click", async (e) => {
   e.preventDefault();
   const zipCodeRegex = /^\d{5}$/;
