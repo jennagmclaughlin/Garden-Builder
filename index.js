@@ -3,7 +3,6 @@ const express = require("express");
 const cors = require("cors");
 const rateLimit = require("express-rate-limit");
 require("dotenv").config();
-const PORT = process.env.PORT || 5500; // 5500 is localhost fallback if port isnt in dotenv
 
 const app = express();
 
@@ -24,4 +23,5 @@ app.use("/api", require("./routes"));
 
 app.use(cors());
 
-app.listen(PORT, () => console.log(`Server running on ${PORT}`));
+// vercel
+module.exports = app;
