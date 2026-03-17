@@ -15,9 +15,6 @@ const limiter = rateLimit({
 app.use(limiter);
 app.set("trust proxy", 1);
 
-// set static folder so index.html can load!
-app.use(express.static("public"));
-
 // make /api go to "/" route
 app.use("/api", require("../routes"));
 

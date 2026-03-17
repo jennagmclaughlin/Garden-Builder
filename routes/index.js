@@ -30,7 +30,7 @@ router.get("/", cache("2 minutes"), async (req, res) => {
     }
     res.status(200).json(data); // 200 is success
   } catch (error) {
-    res.status(500).json({ error }); // 500 is internal/server error
+    res.status(500).json({ error: error.message }); // 500 is internal/server error
   }
 });
 
