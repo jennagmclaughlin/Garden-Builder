@@ -15,10 +15,10 @@ const limiter = rateLimit({
 app.use(limiter);
 app.set("trust proxy", 1);
 
+app.use(cors());
+
 // make /api go to "/" route
 app.use("/api", require("../routes"));
-
-app.use(cors());
 
 // vercel
 module.exports = app;
