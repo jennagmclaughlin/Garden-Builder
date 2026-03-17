@@ -19,7 +19,7 @@ app.set("trust proxy", 1);
 app.use(express.static("public"));
 
 // make /api go to "/" route
-app.use("/api", require("./routes"));
+app.use("/api", require("../routes"));
 
 app.use(cors());
 

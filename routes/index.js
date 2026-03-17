@@ -29,7 +29,7 @@ router.get("/", cache("2 minutes"), async (req, res) => {
       console.log(`REQUEST: ${PLANTS_API_BASE_URL}?${params}`);
     }
     res.status(200).json(data); // 200 is success
-  } catch {
+  } catch (error) {
     res.status(500).json({ error }); // 500 is internal/server error
   }
 });
