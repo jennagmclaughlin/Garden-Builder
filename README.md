@@ -19,8 +19,8 @@ It's a lot more complicated than I thought, because of course it is.
    - Limit fields to what I care about: scientific name, common name, image, description, light, min/max precip, min/max temp, native distribution...
 2. User enters in their state and county, use [us_latlng_json](https://github.com/hiddentao/us_latlng_json/tree/master) to get coordinates. User must also enter how much light their garden will get ("varies," "full sun," "partial," "shade").
    - User coordinates and light are stored in local storage.
-3. With stored coordinates, use [Historical Weather](https://open-meteo.com/en/docs/historical-weather-api) to get averages over a 10-year period.
-   1. Lowest and highest temperature in 10 years (extremes).
+3. With stored coordinates, use [Historical Weather](https://open-meteo.com/en/docs/historical-weather-api) to get averages over a 5-year period.
+   1. Lowest and highest temperature in 5 years (extremes).
    2. Minimum and maximum yearly precipitation.
    3. Skip calculating humidity, it's not important.
    4. Store all of this in user object profile, local storage.
